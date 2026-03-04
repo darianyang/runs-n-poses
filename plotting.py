@@ -37,6 +37,7 @@ COLORS = {
     "protenix": PALETTE[2],
     "chai": PALETTE[3],
     "boltz1x": PALETTE[5],
+    "boltz-r0": "tab:orange",
     "boltz": PALETTE[4],
     "boltz2": list(cmap.Colormap("tol:muted").iter_colors())[3],
     "rfaa": list(cmap.Colormap("tol:muted").iter_colors())[0],
@@ -46,6 +47,7 @@ SHAPES = {
     "af3": "o",
     "protenix": "s",
     "chai": "D",
+    "boltz-r0": "X",
     "boltz1x": "X",
     "boltz": "X",
     "boltz2": "v",
@@ -55,20 +57,23 @@ SHAPES = {
 }
 METHODS = [
     "af3",
-    "af3_no_template",
+    #"af3_no_template",
     "protenix",
-    "chai",
+    #"chai",
     "boltz",
-    "boltz1x",
-    "rfaa",
-    "boltz2",
+    "boltz-r0",
+    #"boltz1x",
+    #"rfaa",
+    #"boltz2",
 ]
-COMMON_SUBSET_METHODS = ["af3", "protenix", "chai", "boltz"]
+#COMMON_SUBSET_METHODS = ["af3", "protenix", "chai", "boltz"]
+COMMON_SUBSET_METHODS = ["af3", "boltz"]
 NAME_MAPPING = {
     "af3": "AlphaFold3",
     "protenix": "Protenix",
     "chai": "Chai-1",
     "boltz1x": "Boltz-1x",
+    "boltz-r0": "Boltz-1 (mini)",
     "boltz": "Boltz-1",
     "boltz2": "Boltz-2",
     "rfaa": "RosettaFold-all-atom",
@@ -420,19 +425,19 @@ def make_one_plot(
             similarity_bins=similarity_bins,
         )
 
-    plot_success_by_similarity(
-        df,
-        ax=ax,
-        lddt_pli_column="lddt_pli_max",
-        rmsd_column="rmsd_min",
-        label="Best",
-        shape="*",
-        color=COLORS["best"],
-        rmsd_threshold=rmsd_threshold,
-        lddt_pli_threshold=lddt_pli_threshold,
-        similarity_metric=similarity_metric,
-        similarity_bins=similarity_bins,
-    )
+    # plot_success_by_similarity(
+    #     df,
+    #     ax=ax,
+    #     lddt_pli_column="lddt_pli_max",
+    #     rmsd_column="rmsd_min",
+    #     label="Best",
+    #     shape="*",
+    #     color=COLORS["best"],
+    #     rmsd_threshold=rmsd_threshold,
+    #     lddt_pli_threshold=lddt_pli_threshold,
+    #     similarity_metric=similarity_metric,
+    #     similarity_bins=similarity_bins,
+    # )
     ax.set_ylabel(ylabel, fontsize=12, fontweight="bold")
     ax.set_xlabel(xlabel, fontsize=12, fontweight="bold")
     ax.text(0.015, 0.99, title, transform=ax.transAxes, fontsize=14, fontweight="bold")

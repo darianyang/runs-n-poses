@@ -1,7 +1,7 @@
 #
 # Conda environment definition with dependencies
 #
-name: runs_n_poses
+name: rnp
 channels:
   - metalcycling
   - conda-forge
@@ -9,7 +9,7 @@ channels:
   - defaults
   - bioconda
 dependencies:
-  - python=3.10.*
+  - python=3.9.*
   - reduce
   - aivant::openstructure=2.8.0
   - boost=1.82

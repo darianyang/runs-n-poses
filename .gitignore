@@ -1,0 +1,5 @@
+__pycache__
+boltz-r0
+*.ckpt
+*.gz
+compounds.chemlib

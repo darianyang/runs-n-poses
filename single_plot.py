@@ -325,7 +325,7 @@ plotting.make_one_plot(
         lddt_pli_threshold=0, # thus RMSD only ranking
         rmsd_threshold=plotting.RMSD_THRESHOLD,
         methods=plotting.METHODS,
-        legend_loc=None,
+        legend_loc="upper left",
         ylabel=f"RMSD < {plotting.RMSD_THRESHOLD} Å Success Rate (%)",
     )
 

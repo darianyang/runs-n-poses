@@ -58,7 +58,7 @@ SHAPES = {
 METHODS = [
     "af3",
     #"af3_no_template",
-    "protenix",
+    #"protenix",
     #"chai",
     "boltz",
     "boltz-r0",

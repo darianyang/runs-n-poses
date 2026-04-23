@@ -182,7 +182,7 @@ input_json = "../inputs.json"
 with open(input_json, 'r') as f:
     input_data = json.load(f)
 
-METHODS = ["boltz-r0"]
+METHODS = ["boltz-r2"]
 
 dfs = pd.DataFrame()
 
@@ -194,7 +194,7 @@ for method in METHODS:
     rmsd=list()
     filenames = list(os.listdir(analysis_dir))
 
-    if method == "boltz" or method == "boltz-r0":
+    if method == "boltz" or method == "boltz-r0" or method == "boltz-r2":
         print(f"Processing method {method} with multiprocessing...")
         partial_func = partial(process_boltz_file, input_data=input_data, 
                                boltz_output_dir=out_dir, boltz_analysis_dir=analysis_dir)
@@ -218,4 +218,4 @@ for method in METHODS:
     dfs = pd.concat([dfs, df], ignore_index=True)
 
 # save the final dataframe to a csv file
-dfs.to_csv("final_scores_boltz-r0.csv", index=False)
+dfs.to_csv("final_scores_boltz-r2.csv", index=False)

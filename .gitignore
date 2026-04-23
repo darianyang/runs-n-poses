@@ -1,5 +1,6 @@
 __pycache__
 boltz-r0
+boltz-r2
 *.ckpt
 *.gz
 compounds.chemlib
